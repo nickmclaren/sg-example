@@ -70,3 +70,8 @@ variable "developer" {
   description = "name of developer who has written this code"
   type        = string
 }
+
+variable "github_access_token" {
+  description = "Token for codepipeline to connect to github repo"
+  type        = string
+}

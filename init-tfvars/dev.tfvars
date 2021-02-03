@@ -1,4 +1,4 @@
-bucket         = "my-bucket-name"
-dynamodb_table = "my-table-name"
-kms_key_id     = "my:key:arn"
-key            = "my-state-name.tfstate"
+bucket         = "terraform-backend-jrlew"
+dynamodb_table = "terraform-backend"
+key            = "dev/sg-example.tfstate"
+region         = "us-east-1"
