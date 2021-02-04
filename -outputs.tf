@@ -17,3 +17,8 @@ output "common_tags" {
   description = "tags which should be applied to all taggable objects"
   value       = local.common_tags
 }
+
+output "cloudfront_domain_name" {
+  description = "Url of created cloudfront distribution" 
+  value = aws_cloudfront_distribution.site.domain_name
+}

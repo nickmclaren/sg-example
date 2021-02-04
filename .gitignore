@@ -10,3 +10,6 @@
 
 # IDE files
 .vscode
+
+# Build Outputs
+www.zip
