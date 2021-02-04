@@ -7,3 +7,6 @@
 
 # .tfvars files in root
 ./*.tfvars
+
+# IDE files
+.vscode

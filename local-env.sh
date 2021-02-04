@@ -1,6 +1,0 @@
-export TF_VAR_name_prefix="sg-example"
-export TF_VAR_env_name="dev"
-export TF_VAR_source_repo="sg-example"
-export TF_VAR_developer="jrlew"
-export TF_VAR_region="us-east-1"
-export TF_VAR_github_access_token="f29b61f8de739fd3942c3fb6a6b15a3534d4284a"
