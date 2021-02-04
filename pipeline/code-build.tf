@@ -15,6 +15,7 @@ module "cloudfront_codepipeline" {
 
   cb_env_image_pull_credentials_type = "CODEBUILD"
   cp_source_poll_for_changes         = true
+  input_tags                         = local.common_tags
 }
 
 locals {
@@ -39,7 +40,7 @@ locals {
         {
             "Effect": "Allow",
             "Action": "s3:ListBucket",
-            "Resource": "arn:aws:s3:::${local.backend_name}"
+            "Resource": "arn:aws:s3:::${local.s3_bucket_name}"
         },
         {
             "Effect": "Allow",
@@ -47,7 +48,7 @@ locals {
                 "s3:GetObject",
                 "s3:PutObject"
             ],
-            "Resource": "arn:aws:s3:::${local.backend_name}/funicom-delivery-static-${var.env_name}.tfstate"
+            "Resource": "arn:aws:s3:::${local.s3_bucket_name}/funicom-delivery-static-${var.env_name}.tfstate"
         },
         {
             "Effect": "Allow",
@@ -56,7 +57,7 @@ locals {
                 "dynamodb:PutItem",
                 "dynamodb:DeleteItem"
             ],
-            "Resource": "arn:aws:dynamodb:us-east-1:${data.aws_caller_identity.current.account_id}:table/${local.s3_bucket_name}"
+            "Resource": "arn:aws:dynamodb:us-east-1:${data.aws_caller_identity.current.account_id}:table/${local.backend_name}"
         },
         {
             "Effect": "Allow",
@@ -93,14 +94,4 @@ locals {
     ]
 }
 POLICY
-
-# Holding onto for now
-        # {
-        #     "Effect": "Allow",
-        #     "Action": [
-        #         "kms:Decrypt",
-        #         "kms:GenerateDataKey"
-        #     ],
-        #     "Resource": "${var.tf_kms_key_id}"
-        # },
 }
