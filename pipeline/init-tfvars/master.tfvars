@@ -1,4 +1,4 @@
 bucket         = "terraform-backend-jrlew"
 dynamodb_table = "terraform-backend"
-key            = "dev/sg-example.tfstate"
+key            = "master/sg-example-pipeline.tfstate"
 region         = "us-east-1"

@@ -18,7 +18,7 @@ output "common_tags" {
   value       = local.common_tags
 }
 
-output "cloudfront_domain_name" {
-  description = "Url of created cloudfront distribution"
-  value       = aws_cloudfront_distribution.site.domain_name
+output "codepipeline_arn" {
+  description = "tags which should be applied to all taggable objects"
+  value       = module.cloudfront_codepipeline.codepipeline_resources_bucket_arn
 }

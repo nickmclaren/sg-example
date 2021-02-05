@@ -7,3 +7,9 @@
 
 # .tfvars files in root
 ./*.tfvars
+
+# IDE files
+.vscode
+
+# Build Outputs
+www.zip
