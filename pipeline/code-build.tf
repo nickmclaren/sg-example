@@ -1,7 +1,7 @@
 module "cloudfront_codepipeline" {
   source                = "github.com/StratusGrid/terraform-aws-codepipeline-iac"
   name                  = "${var.name_prefix}-jrlew${local.name_suffix}"
-  cp_tf_manual_approval = [true] # leave array empty to not have a manual approval step
+  cp_tf_manual_approval = [true] 
   codebuild_iam_policy  = local.cloudfront_codebuild_policy
   cb_env_compute_type   = "BUILD_GENERAL1_SMALL"
   cb_env_image          = "aws/codebuild/standard:2.0"
@@ -19,8 +19,8 @@ module "cloudfront_codepipeline" {
 }
 
 locals {
-    backend_name = "terraform-backend"
-    s3_bucket_name = "terraform-backend-jrlew"
+  backend_name   = "terraform-backend"
+  s3_bucket_name = "terraform-backend-jrlew"
 
   cloudfront_codebuild_policy = <<POLICY
 {

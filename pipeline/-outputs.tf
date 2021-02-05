@@ -17,3 +17,8 @@ output "common_tags" {
   description = "tags which should be applied to all taggable objects"
   value       = local.common_tags
 }
+
+output "codepipeline_arn" {
+  description = "tags which should be applied to all taggable objects"
+  value       = module.cloudfront_codepipeline.codepipeline_resources_bucket_arn
+}
