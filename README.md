@@ -1,15 +1,24 @@
 ## Project Structure
 
 ### root
-Contains terraform for the S3 bucket to store site's content and cloudfront to serve the content
+Contains terraform for calling the simple-cloudfront module
+
+### simple-cloudfront
+Contains module defintion for cloudfront distribution and accompanying s3 source bucket
+
+See simple-cloudfront/README for more info
 
 ### pipeline
 Contains terraform for the codepipeline. Needs to be run manually to avoid stashing github oauth token in repo. Uses github.com/StratusGrid/terraform-aws-codepipeline-iac
 
 ### www
-Static site contents. Pushed to S3 bucket by null_resource (triggered on change to the hash of a zip archive of the www folder) using aws cli sync command
+Static site contents. Pushed to S3 bucket by null_resource (triggered on change to the hash of a zip archive of the site subfolder) using aws cli sync command
 
-## Cloudfront URLs
+## Cloudfront URLs (currently)
 
-- dev branch - d228llppr6aquc.cloudfront.net
+- dev branch 
+    - story-time: d120dfj3dojlts.cloudfront.net
+    - hedberg: d3qp9jtmtpc38k.cloudfront.net
 - master branch - d382xyzra61aim.cloudfront.net
+    - story-time: d228llppr6aquc.cloudfront.net
+    - hedberg: d228llppr6aquc.cloudfront.net

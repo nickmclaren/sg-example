@@ -12,4 +12,4 @@
 .vscode
 
 # Build Outputs
-www.zip
+*.zip
