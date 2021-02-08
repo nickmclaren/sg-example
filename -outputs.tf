@@ -18,7 +18,7 @@ output "common_tags" {
   value       = local.common_tags
 }
 
-output "cloudfront_domain_name" {
+output "cloudfront_module_outputs" {
   description = "Url of created cloudfront distribution"
-  value       = aws_cloudfront_distribution.site.domain_name
+  value       = module.site_cloudfront_distribution.*
 }
