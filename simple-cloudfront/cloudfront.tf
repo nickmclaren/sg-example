@@ -78,12 +78,14 @@ resource "aws_cloudfront_distribution" "site" {
 }
 
 resource "null_resource" "invalidate_www_changes" {
+  count = var.invalidation_paths == [] ? 0 : 1
+
   triggers = {
     src_hash = data.archive_file.site_archive.output_sha
   }
 
   provisioner "local-exec" {
-    command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.site.id} ${local.invalidation_param}"
+    command = "aws cloudfront create-invalidation --distribution-id ${aws_cloudfront_distribution.site.id} --paths ${join(" ", var.invalidation_paths)}"
   }
 
   depends_on = [null_resource.sync_www_to_s3]
