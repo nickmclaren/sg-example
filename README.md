@@ -19,6 +19,7 @@ Static site contents. Pushed to S3 bucket by null_resource (triggered on change 
 - dev branch 
     - story-time: d120dfj3dojlts.cloudfront.net
     - hedberg: d3qp9jtmtpc38k.cloudfront.net
-- master branch - d382xyzra61aim.cloudfront.net
-    - story-time: d228llppr6aquc.cloudfront.net
-    - hedberg: d228llppr6aquc.cloudfront.net
+- master branch - 
+    - story-time: d3aivy4k25cp5r.cloudfront.net
+    - hedberg: d3cd2smdmgacu8.cloudfront.net
+
