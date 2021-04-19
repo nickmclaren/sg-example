@@ -1,6 +1,6 @@
 module "cloudfront_codepipeline" {
   source                = "github.com/StratusGrid/terraform-aws-codepipeline-iac"
-  name                  = "${var.name_prefix}-jrlew${local.name_suffix}"
+  name                  = "${var.name_prefix}${local.name_suffix}"
   cp_tf_manual_approval = [true]
   codebuild_iam_policy  = local.cloudfront_codebuild_policy
   cb_env_compute_type   = "BUILD_GENERAL1_SMALL"
@@ -9,7 +9,7 @@ module "cloudfront_codepipeline" {
   cb_tf_version         = "0.13.4"
   cb_env_name           = var.env_name
   cp_source_oauth_token = var.github_access_token
-  cp_source_owner       = "jrlew"
+  cp_source_owner       = "nickmclaren"
   cp_source_repo        = "sg-example"
   cp_source_branch      = var.env_name
 
