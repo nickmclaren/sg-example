@@ -13,3 +13,6 @@
 
 # Build Outputs
 *.zip
+
+# Mac set up
+.DS_Store

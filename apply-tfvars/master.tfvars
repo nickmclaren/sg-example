@@ -1,5 +1,5 @@
 region      = "us-east-1"
-name_prefix = "sg-example"
+name_prefix = "nickmclarensg"
 env_name    = "master"
-source_repo = "github.com/jrlew/sg-example"
-developer   = "jrlew"
+source_repo = "github.com/nickmclaren/sg-example"
+developer   = "nickmclaren"
